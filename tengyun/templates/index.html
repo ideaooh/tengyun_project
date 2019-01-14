@@ -1,0 +1,404 @@
+{%extends "base_index.html"%}
+{% block mainbody %}
+		<div class="page-wrapper">
+            <div class="container-fluid pt-25">
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+						<div class="panel panel-default card-view pa-0 bg-gradient">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="txt-light block counter"><span class="counter-anim">{{ cvm_ticket_count }}</span></span>
+													<span class="weight-500 uppercase-font block font-13 txt-light">子机工单总数</span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<i class="icon-direction data-right-rep-icon txt-light"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+						<div class="panel panel-default card-view pa-0 bg-gradient1">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="txt-light block counter"><span class="counter-anim">{{ host_ticket_count }}</span></span>
+													<span class="weight-500 uppercase-font block txt-light">母机工单总数</span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<i class="icon-graph  data-right-rep-icon txt-light"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+						<div class="panel panel-default card-view pa-0 bg-gradient3">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="txt-light block counter"><span class="counter-anim">{{ vip_ticket_count }}</span></span>
+													<span class="weight-500 uppercase-font block txt-light">大客户子机故障总数</span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<i class="icon-layers data-right-rep-icon txt-light"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+						<div class="panel panel-default card-view pa-0 bg-gradient2">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="txt-light block counter"><span class="counter-anim">{{ keyword_count }}</span></span>
+													<span class="weight-500 uppercase-font block txt-light">故障关键词积累量</span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<i class="icon-flag  data-right-rep-icon txt-light"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+							<div class="panel card-view">
+							<div class="panel-heading small-panel-heading relative">
+								<div class="pull-left">
+									<h6 class="panel-title">客户自身原因子机故障</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="block">
+													<span class="txt-dark block counter"><span class="counter-anim">{{ client_ticket_count }}</span></span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<div id="sparkline_7" class="sp-small-chart" ></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel card-view bg-gradient2">
+							<div class="panel-heading small-panel-heading relative">
+								<div class="pull-left">
+									<h6 class="panel-title txt-light">平台产品原因子机故障</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left txt-light">
+													<span class="block"></span>
+													<span class="block counter"><span class="counter-anim">{{ product_ticket_count }}</span></span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<div id="sparkline_6" class="sp-small-chart" ></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">Property Stats</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh mr-15">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+									<a href="#" class="pull-left inline-block full-screen mr-15">
+										<i class="zmdi zmdi-fullscreen"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Devices</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>General</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Referral</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div id="e_chart_1" class="" style="height:355px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">大客户子机故障数据分析概览</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<div class="table-responsive">
+										  <table class="table table-hover mb-0">
+											<thead>
+											  <tr>
+												<th>#</th>
+												<th>客户名称</th>
+												<th>top3故障现象</th>
+												<th>故障数</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  <tr>
+												<td>1</td>
+												<td>拼多多</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ p_str_pdd }}</span> </td>
+												<td><span class="text-danger text-semibold"> {{ vip_problem_count_pdd }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>2</td>
+												<td>小红书</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ p_str_xhs }}</span> </td>
+												<td><span class="text-warning text-semibold"> {{ vip_problem_count_xhs }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>3</td>
+												<td>蘑菇街</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ p_str_mgj }}</span> </td>
+												<td><span class="text-success text-semibold"> {{ vip_problem_count_mgj }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>4</td>
+												<td>无忧互通</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ p_str_wyht }}</span> </td>
+												<td><span class="text-info text-semibold"> {{ vip_problem_count_wyht }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>5</td>
+												<td>马上金融</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ p_str_hnqy }}</span> </td>
+												<td><span class="text-info text-semibold"> {{ vip_problem_count_hnqy }}</span> </td>
+											  </tr>
+											</tbody>
+										  </table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">项目进度</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="streamline user-activity">
+										<div class="sl-item">
+											<a href="javascript:void(0)">
+												<div class="sl-avatar avatar avatar-sm avatar-circle">
+													<img class="img-responsive img-circle" src="../img/user.png" alt="avatar"/>
+												</div>
+												<div class="sl-content">
+													<p class="inline-block"><span class="capitalize-font txt-primary mr-5 weight-500">Clay Masse</span><span>invited to join the meeting in the conference room at 9.45 am</span></p>
+													<span class="block txt-grey font-12 capitalize-font">3 Min</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="sl-item">
+											<a href="javascript:void(0)">
+												<div class="sl-avatar avatar avatar-sm avatar-circle">
+													<img class="img-responsive img-circle" src="../img/user1.png" alt="avatar"/>
+												</div>
+												<div class="sl-content">
+													<p class="inline-block"><span class="capitalize-font txt-primary mr-5 weight-500">Evie Ono</span><span>added three new photos in the library</span></p>
+													<div class="activity-thumbnail">
+														<img src="../img/thumb-1.jpg" alt="thumbnail"/>
+														<img src="../img/thumb-2.jpg" alt="thumbnail"/>
+														<img src="../img/thumb-3.jpg" alt="thumbnail"/>
+													</div>
+													<span class="block txt-grey font-12 capitalize-font">8 Min</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="sl-item">
+											<a href="javascript:void(0)">
+												<div class="sl-avatar avatar avatar-sm avatar-circle">
+													<img class="img-responsive img-circle" src="../img/user2.png" alt="avatar"/>
+												</div>
+												<div class="sl-content">
+													<p class="inline-block"><span class="capitalize-font txt-primary mr-5 weight-500">madalyn rascon</span><span>assigned a new task</span></p>
+													<span class="block txt-grey font-12 capitalize-font">28 Min</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="sl-item">
+											<a href="javascript:void(0)">
+												<div class="sl-avatar avatar avatar-sm avatar-circle">
+													<img class="img-responsive img-circle" src="../img/user3.png" alt="avatar"/>
+												</div>
+												<div class="sl-content">
+													<p class="inline-block"><span class="capitalize-font txt-primary mr-5 weight-500">Ezequiel Merideth</span><span>completed project wireframes</span></p>
+													<span class="block txt-grey font-12 capitalize-font">yesterday</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="sl-item">
+											<a href="javascript:void(0)">
+												<div class="sl-avatar avatar avatar-sm avatar-circle">
+													<img class="img-responsive img-circle" src="../img/user4.png" alt="avatar"/>
+												</div>
+												<div class="sl-content">
+													<p class="inline-block"><span class="capitalize-font txt-primary mr-5 weight-500">jonnie metoyer</span><span>created a group 'Hencework' in the discussion forum</span></p>
+													<span class="block txt-grey font-12 capitalize-font">18 feb</span>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					-->
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">子机工单分析概览</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<div class="table-responsive">
+										  <table class="table table-hover mb-0">
+											<thead>
+											  <tr>
+												<th>#</th>
+												<th>粗粒度类型</th>
+												<th>top3故障现象</th>
+												<th>故障数</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  <tr>
+												<td>1</td>
+												<td>平台产品问题</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ problem_str_pt }}</span> </td>
+												<td><span class="text-danger text-semibold"> {{ problem_count_pt }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>2</td>
+												<td>客户自身问题</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ problem_str_cl }}</span> </td>
+												<td><span class="text-warning text-semibold"> {{ problem_count_cl }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>3</td>
+												<td>挂起中问题</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ problem_str_gq }}</span> </td>
+												<td><span class="text-success text-semibold"> {{ problem_count_gq }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>4</td>
+												<td>系统安全问题</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ problem_str_aq }}</span> </td>
+												<td><span class="text-info text-semibold"> {{ problem_count_aq }}</span> </td>
+											  </tr>
+											  <tr>
+												<td>5</td>
+												<td>转研发问题</td>
+												<td><span class="peity-bar" data-width="90" data-peity='{ "fill": ["#635bd6"], "stroke":["#635bd6"]}' data-height="40">{{ problem_str_zyf }}</span> </td>
+												<td><span class="text-info text-semibold"> {{ problem_count_zyf }}</span> </td>
+											  </tr>
+											</tbody>
+										  </table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Row -->
+			</div>
+
+			<!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>2018 &copy; Grandin. Pampered by Hencework</p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+
+		</div>
+{% endblock %}
